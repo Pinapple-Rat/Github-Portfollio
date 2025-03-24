@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kevin Forshee | Red-Team Operator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Indicator -->
+    <div class="loader-container">
+        <div class="banter-loader">
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+            <div class="banter-loader__box"></div>
+        </div>
+    </div>
+
+    <!-- Background Container -->
+    <div class="container"></div>
+
+    <!-- Navigation Menu -->
+    <header>
+        <div class="menu">
+            <a href="#home" class="link active">
+                <span class="link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <path d="M213.3815,109.61945,133.376,36.88436a8,8,0,0,0-10.76339.00036l-79.9945,72.73477A8,8,0,0,0,40,115.53855V208a8,8,0,0,0,8,8H208a8,8,0,0,0,8-8V115.53887A8,8,0,0,0,213.3815,109.61945Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                    </svg>
+                </span>
+                <span class="link-title">Home</span>
+            </a>
+            <a href="#projects" class="link">
+                <span class="link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <polyline points="76.201 132.201 152.201 40.201 216 40 215.799 103.799 123.799 179.799" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline>
+                        <line x1="100" y1="156" x2="160" y2="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <path d="M82.14214,197.45584,52.201,227.397a8,8,0,0,1-11.31371,0L28.603,215.11268a8,8,0,0,1,0-11.31371l29.94113-29.94112a8,8,0,0,0,0-11.31371L37.65685,141.65685a8,8,0,0,1,0-11.3137l12.6863-12.6863a8,8,0,0,1,11.3137,0l76.6863,76.6863a8,8,0,0,1,0,11.3137l-12.6863,12.6863a8,8,0,0,1-11.3137,0L93.45584,197.45584A8,8,0,0,0,82.14214,197.45584Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                    </svg>
+                </span>
+                <span class="link-title">Projects</span>
+            </a>
+            <a href="#skills" class="link">
+                <span class="link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <circle cx="116" cy="116" r="84" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+                        <line x1="175.39356" y1="175.40039" x2="223.99414" y2="224.00098" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                    </svg>
+                </span>
+                <span class="link-title">Skills</span>
+            </a>
+            <a href="#contact" class="link">
+                <span class="link-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="currentColor" viewBox="0 0 256 256">
+                        <rect width="256" height="256" fill="none"></rect>
+                        <path d="M45.42853,176.99811A95.95978,95.95978,0,1,1,79.00228,210.5717l.00023-.001L45.84594,220.044a8,8,0,0,1-9.89-9.89l9.47331-33.15657Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+                        <line x1="96" y1="112" x2="160" y2="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                        <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+                    </svg>
+                </span>
+                <span class="link-title">Contact</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Kevin Forshee</h1>
+                <h2>Red-Team Operator | Co-founder & VP at NETRAT Information Security</h2>
+                <p>Based in Fort Collins, CO, I am a cybersecurity professional specializing in penetration testing, custom security tool development, and red team operations. With expertise in various programming languages and security techniques, I thrive on discovering vulnerabilities and strengthening system defenses.</p>
+                <div class="cta-buttons">
+                    <a href="#projects">
+                        <button>
+                            View Projects
+                        </button>
+                    </a>
+                    <a href="#contact">
+                        <button>
+                            Contact Me
+                        </button>
+                    </a>
+                    <a href="assets/Kevin_resume_1.67.docx" download="Kevin_Forshee_Resume.docx">
+                        <button class="download-button">
+                            <div class="docs">
+                                <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <polyline points="10 9 9 9 8 9"></polyline>
+                                </svg>
+                                Resume
+                            </div>
+                            <div class="download">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <!-- Project Card 1 -->
+                <div class="card">
+                    <img src="assets/img/filelessRevShell.png" alt="Fileless Reverse Shell" class="card-image">
+                    <div class="card__content">
+                        <p class="card__title">Fileless Reverse Shell</p>
+                        <p class="card__description">A sophisticated reverse shell implementation that operates without writing to disk, designed to evade detection by traditional security solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="card">
+                    <img src="assets/img/rubberducky.png" alt="BadUSB Scripts" class="card-image">
+                    <div class="card__content">
+                        <p class="card__title">BadUSB Scripts</p>
+                        <p class="card__description">Collection of offensive security scripts designed for USB devices that emulate trusted peripherals to execute various security testing scenarios.</p>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="card">
+                    <img src="assets/img/Tmobile.png" alt="T-Mobile Security Research" class="card-image">
+                    <div class="card__content">
+                        <p class="card__title">T-Mobile Security Research</p>
+                        <p class="card__description">Conducting tests with NETRAT Information Security to wirelessly intercept T-Mobile texts on 2G/5G services as part of an ongoing bug bounty program.</p>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 (ICMP Reverse Shell) -->
+                <div class="card">
+                    <img src="assets/img/ICMP.png" alt="ICMP Reverse Shell" class="card-image">
+                    <div class="card__content">
+                        <p class="card__title">ICMP Reverse Shell</p>
+                        <p class="card__description">Covert command and control channel that tunnels data through ICMP echo packets, bypassing traditional firewall restrictions for remote access.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements">
+                <h3>Achievements</h3>
+                <ul>
+                    <li>2nd Place - Lockheed Martin Cyberquest Competition (2024)</li>
+                    <li>3rd Place - NOCO Hackers CTF (2024)</li>
+                    <li>Bug Bounty Security Researcher - Reported critical vulnerability to OpenAI via Bugcrowd (2025)</li>
+                    <li>Volunteer High School Teacher for cybersecurity and coach for the 2025 Lockheed Martin CTF competition</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Security Tools & Techniques</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Penetration Testing</div>
+                        <div class="skill-item">Web-Hacking</div>
+                        <div class="skill-item">Port Enumeration</div>
+                        <div class="skill-item">Hardware Hacking</div>
+                        <div class="skill-item">Cyber Forensics</div>
+                        <div class="skill-item">WiFi Pineapple</div>
+                        <div class="skill-item">BadUSB Development</div>
+                        <div class="skill-item">SQL Injection</div>
+                        <div class="skill-item">AWS</div>
+                        <div class="skill-item">Custom Malware</div>
+                        <div class="skill-item">EDR Techniques</div>
+                        <div class="skill-item">Social Engineering</div>
+                        <div class="skill-item">Lock Picking</div>
+                        <div class="skill-item">OSINT</div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Bash</div>
+                        <div class="skill-item">Zsh</div>
+                        <div class="skill-item">PowerShell</div>
+                        <div class="skill-item">Perl</div>
+                        <div class="skill-item">C++</div>
+                        <div class="skill-item">Java</div>
+                        <div class="skill-item">SQL</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">HTML</div>
+                        <div class="skill-item">CSS</div>
+                        <div class="skill-item">Lua</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education & Certifications</h2>
+            <div class="education-container">
+                <div class="education-item">
+                    <h3>Certified Penetration Testing Specialist (CPTS)</h3>
+                    <p class="education-period">In Progress (Expected December 2024)</p>
+                    <p class="education-institution">Hack The Box Education</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>High School Diploma</h3>
+                    <p class="education-period">May 2024</p>
+                    <p class="education-institution">Colorado Early Colleges Fort Collins High School</p>
+                </div>
+                
+                <div class="education-certifications">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Microsoft Office Specialist Associate (2019)</li>
+                        <li>CompTIA ITF+</li>
+                        <li>Google IT Support Certificate</li>
+                        <li>CompTIA A+ (In Progress)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience-container">
+                <div class="experience-item">
+                    <h3>NETRAT Information Security</h3>
+                    <p class="experience-position">Vice President and Co-founder</p>
+                    <p class="experience-period">February 2023 – Present</p>
+                    <ul class="experience-duties">
+                        <li>Conduct red-team operations and remote penetration tests on client companies</li>
+                        <li>Troubleshoot, test, and update company equipment and software</li>
+                        <li>Create custom red-team equipment and software for various security operations</li>
+                        <li>Manage client relationships and business proposals for upcoming contracts</li>
+                        <li>Supervise interns and team members, providing training and advisory support</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Voice of Prophecy</h3>
+                    <p class="experience-position">IT Helpdesk Technician - Intern</p>
+                    <p class="experience-period">June 2023 – July 2023</p>
+                    <ul class="experience-duties">
+                        <li>Provided technical support for Windows Servers and macOS devices, resolving 95% of issues independently</li>
+                        <li>Configured and updated server systems and network devices, improving system uptime</li>
+                        <li>Repaired and tested critical recording equipment, industrial copy machines, and installed UPS devices</li>
+                    </ul>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Taco Johns</h3>
+                    <p class="experience-position">Crew Member</p>
+                    <p class="experience-period">December 2022 – June 2023</p>
+                    <ul class="experience-duties">
+                        <li>Managed point-of-sale system troubleshooting</li>
+                        <li>Delivered efficient customer support under pressure</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm" target="_blank" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSe-XmLb8Cx5lVfyNNv7YUpSg0w8lDg8RNk2YY68n-3FO4hHeg/formResponse">
+                        <div class="form__group field">
+                            <input type="input" name="entry.2005620554" class="form__field" placeholder="Name" required="">
+                            <label for="name" class="form__label">Name</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="email" name="entry.1045781291" class="form__field" placeholder="Email" required="">
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__group field">
+                            <textarea name="entry.839337160" class="form__field" placeholder="Message" required=""></textarea>
+                            <label for="message" class="form__label">Message</label>
+                        </div>
+                        <button type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="formSubmitMessage" class="form-success-message" style="display: none;">
+                        Thank you for your message! I will get back to you soon.
+                    </div>
+                </div>
+                <div class="social-links">
+                    <h3>Connect with me</h3>
+                    <div class="social-buttons">
+                        <a href="https://github.com/Pinapple-Rat" target="_blank">
+                            <button>
+                                <p>GitHub</p>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </button>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kevin-forshee-41571b2b6/" target="_blank">
+                            <button>
+                                <p>LinkedIn</p>
+                                <svg viewBox="0 0 16 16" class="bi bi-linkedin" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                                </svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Kevin Forshee. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
