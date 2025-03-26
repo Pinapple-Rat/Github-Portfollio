@@ -79,9 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Form submission
-    const contactForm = document.querySelector('#contactForm');
+    const contactForm = document.querySelector('form[name="kevinForsheeContactForm"]');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent the default form submission
+            
             // Show loading state
             const submitButton = contactForm.querySelector('button[type="submit"]');
             if (submitButton) {
@@ -89,26 +91,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.disabled = true;
             }
             
-            // Submit the form in the background
-            e.preventDefault();
-            
+            // Submit the form in the background using fetch API
             const formData = new FormData(contactForm);
+            
             fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
                 mode: 'no-cors' // Google Forms requires no-cors mode
             })
-            .then(() => {
-                // Hide the form and show success message
+            .then(response => {
+                console.log("Form submitted successfully");
+                // Show success message
                 contactForm.style.display = 'none';
                 document.getElementById('formSubmitMessage').style.display = 'block';
                 
-                // Reset the form
+                // Reset the form for if the user wants to submit again
                 contactForm.reset();
                 if (submitButton) {
                     submitButton.textContent = "Send Message";
                     submitButton.disabled = false;
                 }
+                
+                // If user closes the tab, the message will remain visible for a while
+                setTimeout(() => {
+                    // Optional: After 5 seconds, reset the form display
+                    contactForm.style.display = 'block';
+                    document.getElementById('formSubmitMessage').style.display = 'none';
+                }, 5000);
             })
             .catch(error => {
                 console.error('Error submitting form:', error);
@@ -116,7 +125,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     submitButton.textContent = "Error! Try Again";
                     submitButton.disabled = false;
                 }
+                
+                // Show error message
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'form-error-message';
+                errorMessage.textContent = 'There was an error submitting the form. Please try again later.';
+                errorMessage.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+                errorMessage.style.color = '#fff';
+                errorMessage.style.padding = '1rem';
+                errorMessage.style.borderRadius = '5px';
+                errorMessage.style.marginTop = '1rem';
+                errorMessage.style.borderLeft = '4px solid #ff0000';
+                contactForm.appendChild(errorMessage);
+                
+                // Remove error message after 3 seconds
+                setTimeout(() => {
+                    errorMessage.remove();
+                }, 3000);
             });
+
+            // Add form name to analytics tracking
+            console.log("Form submitted: kevinForsheeContactForm");
         });
     }
 
@@ -235,3 +264,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
